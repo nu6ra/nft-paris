@@ -90,7 +90,7 @@ async function getSummary(token) {
                     }
                 });
                 console.log(chalk.green("Sukses mendaftar dengan address tersebut"));
-                resolve();  // Resolve promise saat mendapatkan respons yang berhasil
+                resolve(); 
                 return;
             } catch (error) {
                 console.error(chalk.red("Gagal mengambil ringkasan akun, menunggu sebelum mencoba lagi..."));
@@ -98,7 +98,7 @@ async function getSummary(token) {
             }
         }
         console.error(chalk.red("Gagal mengambil ringkasan akun setelah beberapa percobaan."));
-        reject();  // Reject promise setelah mencapai batas maksimal percobaan
+        reject(); 
     });
 }
 
@@ -186,7 +186,7 @@ async function registerNFT() {
                 'authority': 'nftparis.nftstudios.services',
                 'accept': 'application/json, text/plain, */*',
                 'accept-language': 'id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7',
-                'authorization': token, // Asumsi Anda menggunakan variabel token yang sudah ada
+                'authorization': token,
                 'content-type': 'application/json',
                 'origin': 'https://airdrop.nftparis.xyz',
                 'referer': 'https://airdrop.nftparis.xyz/',
@@ -257,7 +257,7 @@ async function checkMintStatus(token) {
 
 
 function saveToFile(address, privkey, token) {
-    const data = `${address}|${privkey}|${token}\n`;  // tambahkan karakter baris baru '\n' di akhir data
+    const data = `${address}|${privkey}|${token}\n`; 
     fs.appendFileSync('akun.txt', data, 'utf8');
 }
 
